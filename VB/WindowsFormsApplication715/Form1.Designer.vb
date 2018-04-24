@@ -25,7 +25,7 @@
         Private Sub InitializeComponent()
             Dim serializableAppearanceObject1 As New DevExpress.Utils.SerializableAppearanceObject()
             Me.colorPickEdit1 = New DevExpress.XtraEditors.ColorPickEdit()
-            DirectCast(Me.colorPickEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.colorPickEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.SuspendLayout()
             ' 
             ' colorPickEdit1
@@ -48,7 +48,7 @@
             Me.Controls.Add(Me.colorPickEdit1)
             Me.Name = "Form1"
             Me.Text = "Form1"
-            DirectCast(Me.colorPickEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.colorPickEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
             Me.ResumeLayout(False)
 
         End Sub
