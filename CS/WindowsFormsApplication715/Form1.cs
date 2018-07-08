@@ -24,9 +24,10 @@ namespace WindowsFormsApplication715 {
             RepositoryItemColorPickEdit ritem = edit.Properties;
             try {
                 ritem.LockEventsCore();
-                using(FrmColorPicker frm = new FrmColorPicker(ritem)) {
+                using(FrmColorPicker frm = new FrmColorPicker(ritem)) {                   
                     frm.StartPosition = FormStartPosition.CenterScreen;
-                    frm.SelectedColor = (Color)ritem.OwnerEdit.EditValue;
+                    var editorColor = (Color)ritem.OwnerEdit.EditValue;
+                    frm.SelectedColor = editorColor.IsEmpty ? Color.FromArgb(255, editorColor) : editorColor;
                     frm.TopMost = true;
                     if(frm.ShowDialog(ritem.OwnerEdit.FindForm()) == DialogResult.OK) {
                         ritem.OwnerEdit.EditValue = frm.SelectedColor;
